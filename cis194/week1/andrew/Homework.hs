@@ -1,7 +1,9 @@
-module Homework
-    ( toDigits,
-      toDigitsRev
-    ) where
+module Homework ( toDigits
+                , toDigitsRev
+                , doubleEveryOther
+                , sumDigits
+                , validate
+                , hanoi ) where
 
 -- 1
 toDigits :: Integer -> [Integer]
@@ -38,6 +40,6 @@ hanoi :: Disks -> Peg -> Peg -> Peg -> [Move]
 
 hanoi n a b c
   | n > 0 = hanoi (n-1) a c b 
-            ++ [(a,b)]
-            ++ hanoi (n-1) c b a
+          ++ [(a,b)]
+          ++ hanoi (n-1) c b a
   | otherwise = []
